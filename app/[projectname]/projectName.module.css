@@ -1,0 +1,75 @@
+.repo_buttons{
+    margin-top: 5px;
+}
+.grid_container{
+    display: grid;
+    grid-template-columns: 250px 1fr ;
+    column-gap: 10px;
+   
+}
+@media (max-width:700px){
+    .grid_container{
+        display: grid;
+        grid-template-columns:  1fr;
+       
+        row-gap: 5px;
+        grid-auto-flow: column;
+        grid-template-rows: auto 2fr;
+        height: 70vh;
+       
+    }
+  
+}
+.all_repo_buttons{
+    display: flex;
+    
+   flex-direction: column;
+ 
+    
+    gap: 10px;
+    margin-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+.treeData{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+}
+.project_title{
+    font-size: 1.5rem;
+    text-align: center;
+   font-weight:600 !important;
+
+}
+.project_structure{
+    font-size: 1.2rem;
+  margin: 10px 5px 5px 15px;
+    font-weight: normal !important;
+
+}
+
+.repo_details_title{
+    color: rgb(59 130 246);
+    font-size: 1.1rem;
+    font-weight: 600;
+
+}
+.repo_details_link{
+    margin-top: 3px;
+    cursor: pointer;
+
+}
+.full_page{
+    height: 80vh;
+    overflow-y: auto;
+}
+

@@ -1,0 +1,62 @@
+.grid_container{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    column-gap: 10px;
+    overflow-x: auto;
+    width: 95vw;
+   
+}
+@media (max-width:600px){
+    .grid_container{
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: 600px 1fr;
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+
+    }
+   
+}
+
+.branch_name{
+    font-size: 20px  !important;
+    font-weight: 500 !important;
+
+}
+
+.branches_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+ 
+    gap: 10px;
+    padding-top: 10px;
+    
+}
+.commitData{
+    display: flex;
+    flex-direction: column;
+    
+}
+.file_name{
+    font-size: 25px;
+    font-weight: bold;
+    color:rgb(59 130 246);
+}
+.full_page{
+    height: 80vh;
+    overflow-y: auto;
+    padding-top: 10px;
+}
+.branch_title{
+    font-size: 30px;
+    font-weight: 600;
+}
+.html_link{
+    color:rgb(59 130 246);
+    font-size: 20px !important;
+    text-decoration: underline;
+    font-weight: bold !important;
+
+}

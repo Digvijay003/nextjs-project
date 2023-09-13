@@ -1,0 +1,68 @@
+.contact_form{
+    display: flex;
+   
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+
+}
+.formContact{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 15px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+   
+    height: 50vh;
+    width: 50vw;
+    justify-content: space-between;
+
+}
+.submit_button{
+    width: 100%;
+    background-color:rgb(59 130 246) !important ;
+    color: white !important;
+    cursor: pointer;
+
+}
+.input_field{
+    padding: 5px;
+    background-color: white !important;
+    margin-top: 5px;
+    
+
+}
+.input_field_dark{
+    color: rgb(30 41 59)!important;
+    padding: 5px;
+    margin-top: 5px;
+    border: .5px solid rgb(30 41 59) !important;
+
+}
+.input_field:hover,.input_field:focus{
+    border: 1px solid rgb(59 130 246) !important;
+}
+.input_field_dark:hover,.input_field_dark:focus{
+    border: 1px solid rgb(59 130 246) !important;
+}
+.error{
+    color: red;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+.contact_heading{
+    font-size: 20px;
+    font-weight: 600;
+}
+.formContact>label{
+    font-weight: 400 !important;
+    font-size: 15px !important;
+}
