@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './projectName.module.css'
 import { useQuery } from '@tanstack/react-query'
 
-export default function page() {
+export default function Page() {
     const params=useParams()
   
     const [treeQueryData,setTreeQueryData]=useState()

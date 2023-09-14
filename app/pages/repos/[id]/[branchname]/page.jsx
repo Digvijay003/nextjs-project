@@ -10,7 +10,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './branchname.module.css'
 import { useQuery } from '@tanstack/react-query'
 
-export default function page() {
+export default function BranchPage() {
     
      const [myUrl,setMyUrl]=useState('')
      const [commitFilesData,setCommitFilesdata]=useState()

@@ -5,7 +5,7 @@ import { useParams, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import styles from './htmlpages.module.css'
 
-export default function page() {
+export default function HTMLPage() {
   
   const {colorMode}=useColorMode
   const searchParams=useSearchParams()
