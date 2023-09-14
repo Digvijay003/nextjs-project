@@ -99,7 +99,7 @@ export default function AllRepo({repos}) {
 
      <div>   
 
-<Input w='540px' variant='outline' height='35px'className='input_text'placeholder='Enter Repository Name'onChange={e=>handleChange(e.target.value)}value={input}/>
+<Input variant='outline' className='input_text'placeholder='Enter Repository Name'onChange={e=>handleChange(e.target.value)}value={input}/>
 
 </div>  
 

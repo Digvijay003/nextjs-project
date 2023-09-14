@@ -115,9 +115,9 @@ useEffect(()=>{
       className='grid_repo_details'
        >
           <GridItem className='first-itemof-grid'>
-            <div >
+           
           <UserProfile name={session?(session?.user?.name):'Digvijay Singh'}/>
-          </div>
+         
 
           </GridItem>
           <GridItem>

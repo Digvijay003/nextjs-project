@@ -22,8 +22,8 @@ export default function UserProfile({name}) {
   const{colorMode}=useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [editDetails,setEditDetails]=useState({
-    email:'default@email',
-    address:'default@address'
+    email:session.user.email,
+    address:'Delhi'
   })
   const EmailRef=useRef()
   const AddressRef=useRef()
@@ -55,7 +55,7 @@ export default function UserProfile({name}) {
     onClose()
   }
   return (<>
-  <div>
+  <div className={colorMode==='dark'?'user-profile-dark':'user-profile'}>
     <div>
    <Image
    className='user_image'
@@ -70,8 +70,8 @@ export default function UserProfile({name}) {
 <div className='extra_user_info'>
 
 
-<Heading fontSize='30px'fontWeight='bold'>{name?name:'Honey Singh'}</Heading>
-<Heading fontSize='15px'>{session.user.email}</Heading>
+<Heading className='user-name'>{name?name:'Honey Singh'}</Heading>
+
 
 
 
@@ -79,7 +79,7 @@ export default function UserProfile({name}) {
 <Button
   size='md'
   height='35px'
-  width='90%'
+  width='100%'
  
 
   className={colorMode==='dark'?'editprofile-button bg-slate-800':'editprofile-button '}
