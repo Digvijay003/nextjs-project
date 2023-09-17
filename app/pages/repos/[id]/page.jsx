@@ -1,7 +1,7 @@
 "use client"
 
 
-import {  Box, Button, Card, CardBody, CardFooter, CardHeader, FormControl, FormLabel, Grid, GridItem, HStack, Heading, Input, SimpleGrid, Spacer, Text,Textarea, useColorMode } from '@chakra-ui/react'
+import {  Box, Button, Card, CardBody, CardFooter, CardHeader, FormControl, FormLabel, Grid, GridItem, HStack, Heading, Input, SimpleGrid, Spacer, Spinner, StylesProvider, Text,Textarea, useColorMode } from '@chakra-ui/react'
 import { redirect, useParams } from 'next/navigation'
 import {
   Accordion,
@@ -33,6 +33,8 @@ import getRepos from '@/utils/getData'
 
 import { useSession } from 'next-auth/react'
 import { GITHUBTOKEN } from '@/utils/githubtoken'
+import styles from './pageRepos.module.css'
+import { useQuery } from '@tanstack/react-query'
 
 
 export default function IssueDetails() {
@@ -44,7 +46,7 @@ const{data:session,status}=useSession({
   }
 })
 
-const githubtoken=GITHUBTOKEN
+const githubtokentoRaiseIssue=GITHUBTOKEN
 
 const [mydata,setMydata]=useState()
 
@@ -52,21 +54,30 @@ const { colorMode} = useColorMode()
 
 const params=useParams()
 
+const githubtoken=session?.accessToken
+
+const getReposDeatils=useQuery({
+  queryKey:["allreposdetailsagain",githubtoken],
+  queryFn:()=>getRepos(githubtoken),
+  
+})
 
 useEffect(()=>{
-  async function getReposDetails(){
-    const res=await getRepos(githubtoken)
-    
-    res?.map((itr)=>{
-      if(itr.id==params.id){
-        setMydata(itr)
-        console.log(itr,'ye he data')
-      }
-    })
-  }
-  getReposDetails()
+  getReposDeatils?.data?.map((itr)=>{
+    if(itr.id==params.id){
+      setMydata(itr)
+      console.log(itr,'ye he data')
+    }
+  })
 
-},[])
+},[getReposDeatils?.data])
+
+
+  
+    
+  
+ 
+
 
 useEffect(()=>{
   console.log(mydata,'mydatalatestwala')
@@ -86,7 +97,7 @@ useEffect(()=>{
     const repository = mydata?.name; // Replace with your repository information
     const endpoint = 'issues'; // Replace with the specific API endpoint
     const data = { "title": inputRef.current.value ,"body":body.current.value}; // Replace with your actual data
-    const token = githubtoken;
+    const token = githubtokentoRaiseIssue;
 
     postToGithub(repository,endpoint,data,token).then(response=>{
       timeout = setTimeout(()=>{
@@ -98,12 +109,31 @@ useEffect(()=>{
 
 
   }
+  if(getReposDeatils.isLoading && getReposDeatils.isFetching){
+    return (
+      <div className='spinner_style'>
+        <Spinner
+      thickness='4px'
+      speed='0.65s'
+      emptyColor='gray.200'
+      color='blue.500'
+      size='xxl'
+      
+    />
+  
+        </div>)
+
+  }
+  if(getReposDeatils.isError){
+    return <h1>Errors Occurs in query fetching</h1>
+
+  }
    
 
   return (
-    <div className='repo_details_page'>
+    <div className={styles.repo_details_page}>
     
-      <HStack spacing={6} className='title-repodetails'>
+      <HStack spacing={6} className={styles.title_repodetails}>
       <Heading fontSize='30px'> Repo Id is : {mydata?.id}</Heading>
         <Text fontSize='20px'fontWeight='bold'>Repo name is : {mydata?.name}</Text>
         <Button onClick={onOpen}>New Issue</Button>
@@ -112,9 +142,9 @@ useEffect(()=>{
 
         <Grid 
        
-      className='grid_repo_details'
+      className={styles.grid_repo_details}
        >
-          <GridItem className='first-itemof-grid'>
+          <GridItem>
            
           <UserProfile name={session?(session?.user?.name):'Digvijay Singh'}/>
          
@@ -123,7 +153,7 @@ useEffect(()=>{
           <GridItem>
          
             
-            <Card className={colorMode==='dark'?'bg-slate-500 text-slate-300 mb-10':'each_card'}>
+            <Card className={colorMode==='dark'?'bg-slate-500 text-slate-300 mb-10':`${styles.each_card}`}>
     <CardHeader>
       <Heading size='md'> Branches Details</Heading>
     </CardHeader>
@@ -149,7 +179,7 @@ useEffect(()=>{
 </Accordion>
 
   </Card>
-  <Card className={colorMode==='dark'?'bg-slate-500 text-slate-300 mb-10':'each_card'}>
+  <Card className={colorMode==='dark'?'bg-slate-500 text-slate-300 mb-10':`${styles.each_card}`}>
     <CardHeader>
       <Heading size='md'> Contents</Heading>
     </CardHeader>
@@ -178,7 +208,7 @@ useEffect(()=>{
   </GridItem>
   <GridItem>
  
-  <Card className={colorMode==='dark'?'bg-slate-500 text-slate-300 mb-10':'each_card'}>
+  <Card className={colorMode==='dark'?'bg-slate-500 text-slate-300 mb-10':`${styles.each_card}`}>
     <CardHeader>
       <Heading size='md'> SSH URL</Heading>
     </CardHeader>
@@ -189,7 +219,7 @@ useEffect(()=>{
     </CardBody>
   
   </Card>
-  <Card className={colorMode==='dark'?'bg-slate-500 text-slate-300 mb-10':'each_card'}>
+  <Card className={colorMode==='dark'?'bg-slate-500 text-slate-300 mb-10':`${styles.each_card}`}>
     <CardHeader>
       <Heading size='md'> Description</Heading>
     </CardHeader>
@@ -198,7 +228,7 @@ useEffect(()=>{
     </CardBody>
     <CardFooter>
       <Text>Created At {mydata?.created_at}</Text>
-      <Link className='external-link'href={`/${mydata?.name}`} isExternal>See More About This Project<ExternalLinkIcon mx='5px' /></Link>
+      <Link className={styles.external_link}href={`/${mydata?.name}`} isExternal>See More About This Project<ExternalLinkIcon mx='5px' /></Link>
       
     </CardFooter>
   </Card>

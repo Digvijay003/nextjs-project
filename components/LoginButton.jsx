@@ -67,7 +67,7 @@ export default function LoginButton() {
       <h1 className='login_title'>Login To Get Started</h1>
       </div>
       
-   <div className='button_login'>
+   <div>
    <button
       onClick={(e)=>handleSignInGitHub(e)}
       className="login_button"

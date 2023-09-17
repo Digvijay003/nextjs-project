@@ -91,10 +91,10 @@ export default function AllRepo({repos}) {
 
 
   return (
-    <div className={colorMode==='dark'?'repo-page_light':'repo-page'}>
+    <div className={colorMode==='dark'?'repo-page_light':'repo_page'}>
     
    
-        <div className='search-navbar'>
+        <div className='search_navbar'>
         
 
      <div>   

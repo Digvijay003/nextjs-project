@@ -21,10 +21,10 @@ export default function BranchDetails({mydata}) {
 
     if(status==='authenticated'){
         return (
-            <div className='branch-container'>
+            <div className='branch_container'>
                 {branchQuery?.data?.map((itr,index)=>{
                     return (
-                        <h3 key={index}className='branch-names'><Link href={`/pages/repos/${index}/${name}`}
+                        <h3 key={index}className='branch_names'><Link href={`/pages/repos/${index}/${name}`}
                             
                           
                         >{itr.name}</Link></h3>

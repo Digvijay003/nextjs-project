@@ -77,12 +77,12 @@ function convertDate(date){
    
     return <>
     <div className='custom_scrollbar'key={index}>
-      <div id='selected_repo_div'className=''>
+      <div id='selected_repo_div'className='selected_repo_div'>
            <Flex className='each_repo_details'>
            <Box ml='3'>
        <Link className={colorMode==='dark'?'text-blue-300 repo_heading':'text-blue-600 repo_heading'}fontSize='3xl'href={`/pages/repos/${itr.id}`}>
         {itr.name}
-          <Badge ml='5' colorScheme='blue'>
+          <Badge ml='5' colorScheme='blue.500'>
            Default
          </Badge>
     </Link>

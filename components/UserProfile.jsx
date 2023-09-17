@@ -55,7 +55,7 @@ export default function UserProfile({name}) {
     onClose()
   }
   return (<>
-  <div className={colorMode==='dark'?'user-profile-dark':'user-profile'}>
+  <div className='user_profile'>
     <div>
    <Image
    className='user_image'
@@ -70,7 +70,7 @@ export default function UserProfile({name}) {
 <div className='extra_user_info'>
 
 
-<Heading className='user-name'>{name?name:'Honey Singh'}</Heading>
+<Heading className='user_name'>{name?name:'Honey Singh'}</Heading>
 
 
 
@@ -79,20 +79,20 @@ export default function UserProfile({name}) {
 <Button
   size='md'
   height='35px'
-  width='100%'
+
  
 
-  className={colorMode==='dark'?'editprofile-button bg-slate-800':'editprofile-button '}
+  className={colorMode==='dark'?'editprofile_button':'editprofile_button_dark'}
   onClick={openModal}
 >
   Edit profile
 </Button>
 
-<div className='user-details'  >
+<div className='user_details'  >
  
- <div className='user-details-items'>
+ <div className='user_details_items'>
   <HStack>
- <Circle size='20px'  color={colorMode==='dark'?'blue.300':'blue'}>
+ <Circle size='20px'  color={colorMode==='dark'?'blue.300':'#2563eb'}>
   <AtSignIcon/>
   </Circle>
  <Text>{editDetails.address}</Text>
@@ -101,11 +101,11 @@ export default function UserProfile({name}) {
  </div>
 </div>
 
-<div className='user-details'>
+<div className='user_details'>
 
- <div className='user-details-items'>
+ <div className='user_details_items'>
   <HStack>
- <Circle size='20px'  color={colorMode==='dark'?'blue.300':'blue'}>
+ <Circle size='20px'  color={colorMode==='dark'?'blue.300':'#2563eb'}>
   <EmailIcon/>
   </Circle>
  <Text>{editDetails.email}</Text>

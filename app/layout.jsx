@@ -31,8 +31,7 @@ export default function RootLayout({ children }) {
           <div>
            
           <Navbar />
-            <div className='whole-page'>
-            
+            <div>
               {children}
               </div>
               

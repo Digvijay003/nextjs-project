@@ -1,0 +1,107 @@
+
+
+.repo_details_page{
+    height: 80vh;
+    overflow-y: auto !important;
+    padding: 10px;
+    width: 100vw;
+    margin-top: 9vh;
+    
+    }
+    
+    
+    .repo_details_page::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+    }
+
+/* Track */
+.repo_details_page::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+    }
+    
+    
+    /* Handle */
+    .repo_details_page::-webkit-scrollbar-thumb {
+    background: rgb(var(--primary-color)); 
+    border-radius: 10px;
+    }
+    
+    
+    /* Handle on hover */
+    .repo_details_page::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--primary-color)); 
+    cursor: pointer;
+    }
+
+    .title_repodetails{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+
+      .grid_repo_details{
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr;
+        column-gap: 15px;
+      }
+    
+      .external_link{
+        text-decoration: underline;
+        color: rgb(var(--primary-color)) !important;
+        font-weight: 700 !important;
+        font-size: 25px !important;
+      }
+
+      .each_card{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 10px;
+        transition: all 1s ease-in-out;
+        margin-bottom: 20px;
+        background-color: #E2E8F0 !important;
+      }
+      .each_card:hover{
+        cursor: pointer;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        transform: scale(1.01);
+        z-index: 99999999999999999999;
+        
+      }
+
+@media (max-width:1000px) and (min-width:650px){
+    .grid_repo_details{
+        display: grid;
+        grid-template-columns: 180px 200px 1fr;
+        grid-template-rows: 1fr;
+
+        column-gap: 7px;
+        overflow-x: auto;
+        overflow-y: auto;
+        width: 100vw;
+        height: 100vh;
+      }
+
+}
+    
+@media (max-width:650px){
+    .grid_repo_details{
+        display: grid;
+        grid-template-columns: 1fr;
+       
+        grid-template-rows: 1fr 1fr 1fr;
+       padding-left: 30px;
+
+        width: 100vw;
+        row-gap: 10px;
+        height: 100vh;
+        overflow-y:auto;
+      
+      }
+
+.each_card{
+    width: 80vw;
+  }
+}

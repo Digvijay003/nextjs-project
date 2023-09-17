@@ -14,6 +14,7 @@ import getRepos from '@/utils/getData';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { sendEmailToDb } from '@/utils/sendEmailToDb';
+import styles from './home.module.css'
 
 
 
@@ -26,23 +27,6 @@ export default function Header2() {
   const githubtoken=session?.accessToken
 
 
- 
-
-  if(status==='authenticated'){
-    console.log(typeof session.user.email,'session user email from home page')
-  
-     const callIt=async ()=>{
-      await sendEmailToDb(session.user.email)
-
-    }
-    callIt()
- 
-  }
-
- 
- 
-  
-
   useEffect(()=>{
 
     if(typeof localStorage!==undefined){
@@ -51,13 +35,22 @@ export default function Header2() {
     
 
   },[])
-  const getReposQuery=useQuery({
-    queryKey:["allreposdetails",githubtoken],
-    queryFn:()=>getRepos(githubtoken),
-    
-  })
+ 
+    const getReposQuery=useQuery({
+      queryKey:["allreposdetails",githubtoken],
+      queryFn:()=>getRepos(githubtoken),
+      
+    })
+
+
+
 
   if(status==='authenticated'){
+    const callIt=async ()=>{
+      await sendEmailToDb(session.user.email)
+
+    }
+    callIt()
 
   
     if(getReposQuery.isLoading && getReposQuery.isFetching){
@@ -82,22 +75,22 @@ export default function Header2() {
     return (
    
       
-      <Grid className='grid-allrepos'>
+      <div className={styles.grid_allrepos}>
     
-      <GridItem >
+      <div>
        
         <UserProfile name={session.user.name}/>
 
       
      
-      </GridItem>
-      <GridItem >
+      </div>
+      <div >
 
       <AllRepo repos={getReposQuery.data}/>
 
-      </GridItem>
+      </div>
   
-    </Grid>
+    </div>
    
     )
 
@@ -106,7 +99,7 @@ export default function Header2() {
 else if(status==='unauthenticated'){
   return (
     <LightMode>
-    <div className={'flex flex-col items-center justify-center h-screen w-screen -mt-16 login_whole_page'}>
+    <div className={styles.login_whole_page}>
       
       
       <LoginButton />

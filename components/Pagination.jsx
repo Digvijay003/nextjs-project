@@ -38,15 +38,15 @@ export default function Pagination({itemsPerPage,items}) {
         marginPagesDisplayed={2}
         pageCount={pageCount}
         previousLabel="< previous"
-        pageClassName="page-item"
-        pageLinkClassName="page-link"
-        previousClassName="page-item"
+        pageClassName="page_item"
+        pageLinkClassName="page_link"
+        previousClassName="page_item"
         previousLinkClassName={colorMode==='dark'?'pagination__link_light':'pagination__link'}
-        nextClassName="page-item"
+        nextClassName="page_item"
         nextLinkClassName={colorMode==='dark'?'pagination__link_light':'pagination__link'}
         breakLabel="..."
-        breakClassName="page-item"
-        breakLinkClassName="page-link"
+        breakClassName="page_item"
+        breakLinkClassName="page_link"
         containerClassName={colorMode==='dark'?'pagination bg-slate-200':'pagination'}
         activeClassName={colorMode==='dark'?'pagination__link__active_light':'pagination__link__active'}
         renderOnZeroPageCount={null}

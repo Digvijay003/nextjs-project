@@ -34,7 +34,7 @@ export default function HTMLPage() {
   return (
     <div className={styles.html_pageData}>
         <Heading className='text-center font-medium'size='md'>ReadAble Formats</Heading>
-        <div id='setdatahere'className={colorMode==='dark'?`${styles.htmlData} `:`${styles.htmlData}`}> 
+        <div id='setdatahere'className={styles.htmlData}> 
 
         </div>
     </div>

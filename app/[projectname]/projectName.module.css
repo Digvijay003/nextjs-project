@@ -71,5 +71,6 @@
 .full_page{
     height: 80vh;
     overflow-y: auto;
+    margin-top: 9vh;
 }
 

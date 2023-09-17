@@ -47,7 +47,7 @@
 .full_page{
     height: 80vh;
     overflow-y: auto;
-    padding-top: 10px;
+    margin-top: 9vh;
 }
 .branch_title{
     font-size: 30px;

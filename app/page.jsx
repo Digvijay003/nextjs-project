@@ -4,7 +4,7 @@ import Header2 from "./home/page";
 export default function Home() {
 
   return (  
-  <div  > 
+  <div> 
   <Header2/>
   </div>
 

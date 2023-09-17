@@ -12,7 +12,7 @@ export default function Navbar() {
  
   
   return (
-    <nav className="flex  justify-between fixed left-0 right-0 px-8 h-14 bg-blue-500 text-white">
+    <nav className="navbar">
       <Link className="font-bold mt-1" href={"/"}>
         Abc Company
       </Link>
