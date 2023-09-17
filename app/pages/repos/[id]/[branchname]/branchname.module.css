@@ -42,7 +42,7 @@
 .file_name{
     font-size: 25px;
     font-weight: bold;
-    color:rgb(59 130 246);
+    color:hsl(var(--primary-color));
 }
 .full_page{
     height: 80vh;
@@ -54,7 +54,7 @@
     font-weight: 600;
 }
 .html_link{
-    color:rgb(59 130 246);
+    color:hsl(var(--primary-color));
     font-size: 20px !important;
     text-decoration: underline;
     font-weight: bold !important;

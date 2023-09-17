@@ -13,7 +13,7 @@ export default function Navbar() {
   
   return (
     <nav className="navbar">
-      <Link className="font-bold mt-1" href={"/"}>
+      <Link className="font-bold mb-5" href={"/"}>
         Abc Company
       </Link>
       {(status==='authenticated') ? <><Breadcrumb fontWeight='medium' fontSize='sm'className='breadCrumb_items'>

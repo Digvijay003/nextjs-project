@@ -82,7 +82,7 @@ function convertDate(date){
            <Box ml='3'>
        <Link className={colorMode==='dark'?'text-blue-300 repo_heading':'text-blue-600 repo_heading'}fontSize='3xl'href={`/pages/repos/${itr.id}`}>
         {itr.name}
-          <Badge ml='5' colorScheme='blue.500'>
+          <Badge ml='5' className={colorMode==='dark'?'bg-sky-500':'bg-blue-500'}>
            Default
          </Badge>
     </Link>
@@ -109,8 +109,8 @@ function convertDate(date){
  <Button
  onClick={()=>handlePageChange(currentPage-1)}
  isDisabled={currentPage===0}
- className='pagination_button'
- colorScheme='blue'
+ className={colorMode==='dark'?'pagination_button dark':'pagination_button light'}
+
  >
   Previous Page
 
@@ -118,9 +118,9 @@ function convertDate(date){
  <Button
  onClick={()=>handlePageChange(currentPage+1)}
  isDisabled={currentPage===nextPageDisabled}
- colorScheme='blue'
 
- className={colorMode==='dark'?'.pagination_button bg-sky-500 text-slate-800':'pagination_button'}
+
+ className={colorMode==='dark'?'pagination_button dark':'pagination_button light'}
  
  >
   Next Page

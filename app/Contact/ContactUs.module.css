@@ -27,7 +27,7 @@
 }
 .submit_button{
     width: 100%;
-    background-color:rgb(59 130 246) !important ;
+    background-color:hsl(var(--primary-color)) !important ;
     color: white !important;
     cursor: pointer;
 
@@ -40,17 +40,17 @@
 
 }
 .input_field_dark{
-    color: rgb(30 41 59)!important;
+    color: hsl(var(--secondary-color))!important;
     padding: 5px;
     margin-top: 5px;
-    border: .5px solid rgb(30 41 59) !important;
+    border: .5px solid hsl(var(--secondary-color)) !important;
 
 }
 .input_field:hover,.input_field:focus{
-    border: 1px solid rgb(59 130 246) !important;
+    border: 1px solid hsl(var(--primary-color)) !important;
 }
 .input_field_dark:hover,.input_field_dark:focus{
-    border: 1px solid rgb(59 130 246) !important;
+    border: 1px solid hsl(var(--primary-color)) !important;
 }
 .error{
     color: red;

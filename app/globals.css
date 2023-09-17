@@ -6,8 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
- --primary-color:59,130,246;
- --secondary-color:30,41,59;
+ --primary-color:217,91%,60%;
+ --secondary-color:217,33%,17%;
+ --primary-color-darkTheme:199,89%,48%;
+
+ --secondary-color-darkTheme:67,45,78;
  
 }
 
@@ -16,7 +19,8 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-    --primary-color:125,211,252;
+   
+   
   }
 }
 
@@ -44,31 +48,24 @@ body {
   border-radius: 5px ;
   padding: 10px;
   color: white !important;
-  margin-top: 15px;
+  margin-top: 15px; 
  
-  background-color: rgb(14 165 233) !important;
-  
-
  
   width: 100%;
   
-}
-.editprofile_button_dark{
-  border-radius: 5px ;
-  padding: 10px;
-  color: white !important;
-  margin-top: 15px;
-  background-color: rgb(var(--primary-color)) !important;
- 
-
-  width: 100%;
   
+}
+.light{
+  background-color: hsl(var(--primary-color)) !important;
+
+}
+.dark{
+  background-color: hsl(var(--primary-color-darkTheme)) !important;
+
 }
 
 
-.repo_page{
- 
-  
+.repo_page,.repo_page_light{
   overflow-y: auto ;
   overflow-x: hidden;
 
@@ -78,18 +75,6 @@ body {
 
 }
 
-.repo_page_light{
-
-
-overflow-y: auto ;
-
-padding: 8px;
-width: 80vw;
-
-overflow-x: hidden;
-height: 80vh;
-
-}
 
 
 .input_text{
@@ -107,16 +92,16 @@ transform: scale(1.01);
 .repo_button{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
+  color: white !important;
+
 }
 
 .repo_heading{
   font-size: 2rem;
   font-weight: 500 ;
+  cursor: pointer;
  
   
-}
-.repo_heading:hover{
-  cursor: pointer;
 }
 
 
@@ -141,24 +126,15 @@ width: 5px;
  
 /* Handle */
 .repo_page::-webkit-scrollbar-thumb {
-  background: rgb(var(--primary-color)); 
+  background: hsl(var(--primary-color)); 
   border-radius: 10px;
+  cursor: pointer;
 }
 .repo_page_light::-webkit-scrollbar-thumb {
-  background:  rgb(var(--primary-color)) !important; 
+  background:  hsl(var(--primary-color-darkTheme)); 
   border-radius: 10px;
-}
-
-/* Handle on hover */
-.repo_page::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--primary-color)); 
   cursor: pointer;
 }
-.repo_page_light::-webkit-scrollbar-thumb:hover {
-  background:  rgb(var(--primary-color)); 
-  cursor: pointer;
-}
-
 
 
 
@@ -168,6 +144,7 @@ width: 5px;
   top: -70px;
   cursor: pointer;
   transition: all 1s ease-in-out;
+  border: .2rem solid white;
 
 }
 .user_avatar:hover{
@@ -189,13 +166,8 @@ width: 5px;
   flex-direction: column;
   justify-content: center;
  align-items: center;
-
-
-
-
  background: rgba(255, 255, 255, 0.5);
- box-shadow: 0 0px 7px 1px rgba(0, 0, 0, 0.5);
-
+ box-shadow: 0 0px 7px 1px rgba(0, 0, 0, 0.5); 
 border: 2px solid rgba(255, 255, 255,.5);
 
 
@@ -207,7 +179,7 @@ z-index: 99999999;
 
 .login_title{
 font-weight: 800;
-  color: rgba(var(--secondary-color),1);
+  color: hsl(var(--secondary-color));
   font-size: 1.5rem;
   margin-bottom: 2vh;
   margin-top: 2px;
@@ -221,32 +193,32 @@ font-weight: 800;
   flex-wrap: wrap;
 }
 .submit_button_footer{
-  background-color: rgb(var(--secondary-color));
+  background-color: hsl(var(--secondary-color));
   color: white;
   padding: 2px;
 
 }
 .submit_button_footer:hover{
-  box-shadow: 0 0 4px 0 rgba(var(--secondary-color),1);
+  box-shadow: 0 0 4px 0 hsl(var(--secondary-color));
 }
 .signup_link{
   font-weight: bold;
   font-size: 17px;
-  color: rgb(var(--primary-color));
+  color: hsl(var(--primary-color));
   text-decoration: underline;
 }
 
 
 
 .login_button:hover{
-  box-shadow: 0 0 4px 0 rgba(var(--secondary-color),1);
+  box-shadow: 0 0 4px 0 hsl(var(--secondary-color));
 }
 .login_button{
   font-weight: bold;
   color: white;
   border-radius: .5rem;
   margin-top: 1px;
-  background-color: rgb(var(--secondary-color));
+  background-color: hsl(var(--secondary-color));
   width: 200px;
   height: 50px ;
 }
@@ -264,26 +236,22 @@ margin-right: auto;
 margin-left: -130px;
 margin-top: 30px;
 }
-.signIn_navbar{
-font-weight: bold;
-font-size: 20px;
-}
+
 .user_image{
 
 
 border-radius: 50%;
-margin-bottom: -10px;
+margin-bottom: -5px;
+border: .2rem solid white;
 
 }
 
 .pagination_button{
-background-color: rgb(var(--primary-color)) ; 
-color: white ;
 
-
-
+color: white !important;
 margin: 10px !important;
 }
+
 
 
 .pagination {
@@ -299,22 +267,22 @@ flex-wrap: wrap;
 padding: 10px;
 border-radius: 5px;
 border: 1px solid white;
-color: rgb(var(--primary-color));
+color: hsl(var(--primary-color));
 }
 .pagination_light {
-color: rgb(125 211 252) !important;
+color: hsl(var(--primary-color-darkTheme)) !important;
 }
 
 .pagination__link {
 font-weight: bold;
 }
 .pagination__link__active_light {
-background: rgb(125 211 252) !important;
+background: hsl(var(--primary-color-darkTheme)) !important;
 }
 
 .pagination__link__active a {
 color: #fff;
-background: hsl(217, 91%, 60%);
+background: hsl(var(--primary-color));
 }
 
 .pagination__link--disabled a {
@@ -332,7 +300,8 @@ flex-wrap: wrap;
 }
 .icon_button_navbar{
 margin-top: 9px;
-padding: 1px !important;
+margin-right: 9px ;
+
 }
 
 
@@ -345,71 +314,60 @@ border:2px solid white !important;
 margin-bottom: 5px;
 }
 .input_login:hover, .input_login:focus{
-border: 2px solid rgb(var(--primary-color)) !important;
+border: 2px solid hsl(var(--primary-color)) !important;
 }
 .input_login::placeholder{
-color: hsl(218, 23%, 43%) !important;
+color: hsla(var(--secondary-color),.5) !important;
 }
 .input_label{
 font-weight: 600 !important;
-color: rgba(var(--secondary-color),1);
+color: hsla(var(--secondary-color),1);
 font-size: 20px;
 margin-bottom: 2px;
 
 }
+.user_profile{
+  background-color: rgba(255, 255, 255, 0.1) !important; 
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0px 0px 10px 7px rgba(0, 0, 0, 0.1);
 
-@media  (max-width:1000px) and (min-width:650px){
- 
-.login_card{
-  width: 55vw;
-  height: 70vh;
+  padding: 5px;
+  border-radius: 10px;
 
+  z-index: 999999999999999999;
+  border-color: gray;
+  
+  margin-top: 10px;
+  height: 80vh;
+
+  
 }
 
-.footer_text{
-  margin-left: 10px;
-
-}
-.input_login:hover, .input_login:focus{
-  border: 2px solid rgb(var(--primary-color)) !important;
-}
-
-
-
-
-
-
-}
-@media (max-width:650px){
- 
-
-.footer_text{
-  margin-left: 15px;
+.user_name{
+  font-size: 1.6rem !important;
+  font-weight: bold;
+  width: 100% !important;
  
 }
-.login_card{
-  width: 70vw;
-  height: 70vh;
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: hsl(var(--primary-color));
+  color: white ;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 8.5vh;
 
 }
-.input_login:hover, .input_login:focus{
-  border: 2px solid rgb(var(--primary-color)) !important;
-}
-.input_login::placeholder{
-  display: none;
-  opacity: 0;
-}
 
 
 
-
-
-
-
-
-
-
-}
 
 .branch_names{
   font-size: 20px;
@@ -420,56 +378,6 @@ margin-bottom: 2px;
 
 
 
-@media (max-width:1000px) and (min-width:500px){
-  .one, .two{
-    display: none;
-  }
-  .user_profile{
-    background-color: white !important;
-    height: 80vh;
-  }
-  .each_repo_details{
-    width: 69vw !important;
-   
-   }
- 
-
-}
-
-
-
-
-
-@media (max-width:500px){
-
-
-  .one,.two{
-    display: none;
-  }
- 
-
-}
-@media (max-width:650px){
-  .user_profile{
-    background-color: white;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
-   
-    height: 200px !important;
-    overflow-y: auto;
-
-   }
-   .repo_page,.repo_page_light{
-    height: 50vh !important;
-   }
-  
-  
-
-  
-
-}
 
 .login_notRight{
   font-size: 25px;
@@ -495,6 +403,7 @@ margin-bottom: 2px;
   white-space: wrap;
   width: 100% !important;
   word-break: break-all;
+  word-wrap: break-word;
  
 
 
@@ -507,7 +416,7 @@ margin-bottom: 2px;
 
 
 
-.search_navbar{
+.search_navbar,.each_repo_details{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -515,15 +424,6 @@ margin-bottom: 2px;
   width: 75vw;
   gap: 5px;
   
-}
-.each_repo_details{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 75vw;
-  gap: 5px;
- 
 }
 
 
@@ -536,11 +436,11 @@ margin-bottom: 2px;
 
 }
 .one{
-  background-color: rgb(var(--primary-color));
+  background-color: hsl(var(--primary-color));
   position: absolute;
   top: 10%;
   left: 25%;
-  box-shadow: rgb(var(--secondary-color))   0px 0px 20px 5px;
+  box-shadow: hsl(var(--secondary-color))   0px 0px 20px 5px;
   animation-name: anim1;
   animation-duration: 24s;
   animation-timing-function: linear;
@@ -548,15 +448,19 @@ margin-bottom: 2px;
 
 }
 .two{
-  background-color: rgb(var(--secondary-color)) ;
+  background-color: hsl(var(--secondary-color)) ;
   position: absolute;
   top: 75%;
   right: 25%;
-  box-shadow: rgb(var(--primary-color)) 0px 0px 20px 5px;
+  box-shadow: hsl(var(--primary-color)) 0px 0px 20px 5px;
   animation-name: anim2;
   animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+.signOut{
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
 @keyframes anim1{
@@ -593,46 +497,87 @@ margin-bottom: 2px;
 
   }
 }
-
-.user_profile{
-  background-color: rgba(255, 255, 255, 0.1) !important; 
-  backdrop-filter: blur(10px) !important;
-  box-shadow: 0px 0px 10px 7px rgba(0, 0, 0, 0.1);
-
-  padding: 5px;
-  border-radius: 10px;
-
-  z-index: 999999999999999999;
-  border-color: gray;
-  
-  margin-top: 10px;
-  height: 80vh;
-
-  
+@media (max-width:1000px) and (min-width:500px){
+  .one, .two{
+    display: none;
+  }
+  .user_profile{
+    background-color: white !important;
+    height: 80vh;
+  }
+  .each_repo_details{
+    width: 69vw !important;
+   
+   }
 }
 
-.user_name{
-  font-size: 1.6rem !important;
-  font-weight: bold;
-  width: 100% !important;
+@media (max-width:500px){
+
+  .one,.two{
+    display: none;
+  }
  
-}
-
-.navbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: rgb(var(--primary-color));
-  color: white ;
-  padding-left: 30px;
-  padding-right: 30px;
-  height: 8.5vh;
 
 }
+
+@media  (max-width:1000px) and (min-width:650px){
+ 
+  .login_card{
+    width: 55vw;
+    height: 70vh;
+  
+  }
+  
+  .footer_text{
+    margin-left: 10px;
+  
+  }
+  .input_login:hover, .input_login:focus{
+    border: 2px solid hsl(var(--primary-color)) !important;
+  }
+  
+  
+  }
+
+  @media (max-width:650px){
+    .user_profile{
+      background-color: white;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+     
+      height: 200px !important;
+      overflow-y: auto;
+  
+     }
+     .repo_page,.repo_page_light{
+      height: 50vh !important;
+     }
+    
+   
+  
+  .footer_text{
+    margin-left: 15px;
+   
+  }
+  .login_card{
+    width: 70vw;
+    height: 70vh;
+  
+  }
+  .input_login:hover, .input_login:focus{
+    border: 2px solid hsl(var(--primary-color)) !important;
+  }
+  .input_login::placeholder{
+    display: none;
+    opacity: 0;
+  }
+  
+
+  }
+
+
 
 
 

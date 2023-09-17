@@ -20,29 +20,14 @@
     }
   
 }
-.all_repo_buttons{
-    display: flex;
-    
-   flex-direction: column;
- 
-    
-    gap: 10px;
-    margin-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 15px;
-    padding-left: 15px;
 
-}
-.treeData{
+.treeData,.all_repo_buttons{
     display: flex;
     flex-direction: column;
     
     gap: 10px;
-    padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 15px;
+  
+    padding: 10px 15px 10px 15px;
 }
 .project_title{
     font-size: 1.5rem;
@@ -58,7 +43,7 @@
 }
 
 .repo_details_title{
-    color: rgb(59 130 246);
+    color: hsl(var(--primary-color));
     font-size: 1.1rem;
     font-weight: 600;
 

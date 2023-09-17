@@ -24,16 +24,12 @@
     
     /* Handle */
     .repo_details_page::-webkit-scrollbar-thumb {
-    background: rgb(var(--primary-color)); 
+    background: hsl(var(--primary-color)); 
     border-radius: 10px;
-    }
-    
-    
-    /* Handle on hover */
-    .repo_details_page::-webkit-scrollbar-thumb:hover {
-    background: rgb(var(--primary-color)); 
     cursor: pointer;
     }
+    
+
 
     .title_repodetails{
         display: flex;
@@ -51,7 +47,7 @@
     
       .external_link{
         text-decoration: underline;
-        color: rgb(var(--primary-color)) !important;
+        color: hsl(var(--primary-color)) !important;
         font-weight: 700 !important;
         font-size: 25px !important;
       }

@@ -14,12 +14,12 @@ export default function LoginButton() {
   // })
   
   const token=session?.accessToken
-  const [accessToken,setAccesToken]=useState('')
+
   const handleSignInGitHub=(e)=>{
     e.preventDefault()
     localStorage.setItem("mygithubtoken",token)
     signIn('github')
-    setAccesToken(localStorage.getItem('mygithubtoken'))
+   
  
 
   }

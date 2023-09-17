@@ -82,7 +82,7 @@ export default function UserProfile({name}) {
 
  
 
-  className={colorMode==='dark'?'editprofile_button':'editprofile_button_dark'}
+  className={colorMode==='dark'?'editprofile_button dark':'editprofile_button light'}
   onClick={openModal}
 >
   Edit profile

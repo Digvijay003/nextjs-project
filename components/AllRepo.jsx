@@ -105,7 +105,7 @@ export default function AllRepo({repos}) {
 
  
   <div >
-  <Button colorScheme='blue'className='repo_button'onClick={onOpen}>New Repo</Button>
+  <Button className={colorMode==='dark'?'repo_button dark':'repo_button light'}onClick={onOpen}>New Repo</Button>
    
   </div>
  
