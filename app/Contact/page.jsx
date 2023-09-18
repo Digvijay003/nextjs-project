@@ -14,7 +14,7 @@ export default function ContactUs() {
     const [email,setEmail]=useState('')
     const [error,setError]=useState('')
     const toast=useToast()
-    const {status}=useSession({
+    const {data:session,status}=useSession({
       required:true,
       onUnauthenticated(){
         redirect('/')
@@ -32,7 +32,7 @@ export default function ContactUs() {
     },[])
     
    
-    const handleSubmit=async (e)=>{
+ const handleSubmit=async (e)=>{
 
           e.preventDefault()
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -40,8 +40,7 @@ export default function ContactUs() {
           if(!chechValidmail){
             setError('email is not validated try again')
             setEmail('')
-            return
-           
+            return 
 
           }
           toast({
@@ -54,7 +53,7 @@ export default function ContactUs() {
       },
   
             status: 'success',
-            duration: 9000,
+            duration: 5000,
             isClosable: true, 
           })
 
@@ -65,9 +64,7 @@ export default function ContactUs() {
             })
 
           },[2000])
-        
-     
-        console.log('Your Email is ',email)
+
         await axios.post('http://localhost:3000/api/contact',{
            
             data:{"email":email},

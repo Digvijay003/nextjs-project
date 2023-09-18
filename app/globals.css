@@ -10,7 +10,7 @@
  --secondary-color:217,33%,17%;
  --primary-color-darkTheme:199,89%,48%;
 
- --secondary-color-darkTheme:67,45,78;
+
  
 }
 
@@ -461,6 +461,9 @@ margin-bottom: 2px;
 .signOut{
   font-weight: bold;
   font-size: 1.3rem;
+}
+.error-NewRepo{
+  margin-top: 9vh;
 }
 
 @keyframes anim1{

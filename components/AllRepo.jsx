@@ -1,20 +1,20 @@
-import { Box, Button, ButtonGroup, Divider, Flex, FormControl, FormLabel, HStack, Heading, IconButton, Input, Progress, Select, Spacer, useColorMode, useDisclosure } from '@chakra-ui/react'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import {  Button,  FormControl, FormLabel,  Input, Progress, useColorMode, useDisclosure } from '@chakra-ui/react'
+import React, { useEffect,  useRef, useState } from 'react'
 
 import SingleRepo from './SingleRepo'
 import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
+  
   ModalFooter,
   ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react'
 import axios from 'axios'
 
-import { redirect, useRouter } from 'next/navigation'
-import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+
 import { GITHUBTOKEN } from '@/utils/githubtoken'
 
 
@@ -22,7 +22,7 @@ import { GITHUBTOKEN } from '@/utils/githubtoken'
 export default function AllRepo({repos}) {
   const router=useRouter()
   const {colorMode}=useColorMode()
-  const{data:session}=useSession()
+ 
 
   const githubtoken=GITHUBTOKEN
 
@@ -41,7 +41,7 @@ export default function AllRepo({repos}) {
     setFilteredRepos(result)
 
   },[input])
-  let timeout2
+  let timeout2;
   
   const createRepository =async ()=>{
     clearTimeout(timeout2)
@@ -76,15 +76,15 @@ export default function AllRepo({repos}) {
    
   }
  
-  let timeout
+  let timeout;
   const handleChange=(query)=>{
     clearTimeout(timeout)
 
     timeout=setTimeout(()=>{
-     console.log(query)
+     
      setInput(query)
 
-    },100)
+    },500)
    
 
   }

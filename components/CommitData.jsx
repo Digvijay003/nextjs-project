@@ -22,9 +22,9 @@ export default function CommitData({commitFilesData}) {
 
 <Heading size='md'> If you want to see HTML page of commits Click Below</Heading><br/>
             
-        {/* {commitData?<Link href={{pathname:commitData.html_url,query:{name:'hi'}}}>Click here</Link>:''} */}
+      
 
-        {commitFilesData?.html_url!==undefined?<Link href={commitFilesData?.html_url}className={styles.html_link}>check link of html</Link>:'Link is not available yet'}
+        {commitFilesData?.html_url!==undefined?<Link href={commitFilesData?.html_url}className={styles.html_link}>Check link of html</Link>:'Link is not available yet'}
 
        
 

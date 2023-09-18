@@ -1,6 +1,6 @@
 "use client"
 import { Button, Input } from '@chakra-ui/react'
-import { redirect, useRouter } from 'next/navigation'
+import {  useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import styles from '../app/SignUp/SignUp.module.css'
 
@@ -51,18 +51,18 @@ export default function SignUpForm() {
             })
             if(res.ok){
                 router.push('/home')
-                console.log('data sent successfully')
+               
             }
             else if(res.status === 500){
                 setErrors('Email already taken choose another email')
             }
-            console.log(res,'let see response')
+           
            
 
         }catch(error){
             
             setError("Some Error Occurs")
-            console.log(error,'some error occurs')
+          
         }
        
         setFormData({

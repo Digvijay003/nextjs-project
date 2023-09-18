@@ -1,10 +1,10 @@
 
 import React, { useEffect, useState } from 'react'
 
-import Pagination from './Pagination'
 import { Badge, Box, Button, ButtonGroup, Flex, IconButton, Progress, Text, useColorMode } from '@chakra-ui/react';
 import Link from 'next/link';
 import { StarIcon } from '@chakra-ui/icons';
+import convertDate from '@/utils/formatDate';
 
 
 
@@ -15,11 +15,7 @@ export default function SingleRepo({repos}) {
 
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage=3
-  useEffect(()=>{
-    
-    console.log(repos,'repos ')
 
-  },[repos])
 
 const handlePageChange = (selectedPage) => {
   console.log(selectedPage,'page dekho')
@@ -31,43 +27,7 @@ const startIndex=(currentPage)*itemsPerPage
 const endIndex=startIndex+itemsPerPage
 const subsets=repos?.slice(startIndex,endIndex)
 
-function convertDate(date){
-  const options = { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric', 
-    hour: 'numeric', 
-    minute: 'numeric', 
-    second: 'numeric', 
-    timeZoneName: 'short' 
-  };
-  const dateObj = new Date(date)
 
-  const formatedDate=dateObj.toLocaleDateString(undefined,options)
-  return formatedDate
-
-}
-
-
-   
-
-// function toggleStarFunctionality(){
-// setNewData((prevData)=>{
-//   const newDataWithId=prevData.map((item,index)=>{
-//     return {
-//       ...item,
-//       id:index+1
-//     }
-  
-//   })
-//   return newDataWithId
-// })
-//  console.log(newData,'newDatawithId')
- 
-
-  
-// }
-  
 
   
     return (<div className='each_repo_div'>

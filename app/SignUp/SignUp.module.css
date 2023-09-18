@@ -17,7 +17,7 @@
 }
 .submit_button{
   
-    background-color:rgb(59 130 246) !important;
+    background-color:hsl(var(--primary-color)) !important;
     color: white !important;
     margin-top: 15px;
     border-radius: 15px;
@@ -29,7 +29,7 @@
     box-shadow: 0 0 4px 0 rgba(51,65,85,1);
 }
 .form>input:hover,.form>input:focus{
-    border: 1px solid rgb(59 130 246) !important;
+    border: 1px solid hsl(var(--primary-color)) !important;
 }
 .form>input{
     border: .5px solid gray;

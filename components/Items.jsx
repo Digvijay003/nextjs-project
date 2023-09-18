@@ -2,17 +2,12 @@
 import { TriangleDownIcon } from '@chakra-ui/icons'
 import { Badge, Box, Button, ButtonGroup, Flex, IconButton, Progress, Spacer, Text, useColorMode } from '@chakra-ui/react'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 
 
 export default function Items({currentItems}) {
     const { colorMode} = useColorMode()
 
- 
-
-  
-
-  
     return (<div className='each_repo_div'>
 
         {currentItems?.map((itr,index)=>{
@@ -24,7 +19,7 @@ export default function Items({currentItems}) {
                    <Box ml='3'>
                <Link className={colorMode==='dark'?'text-blue-300 repo_heading':'text-blue-600 repo_heading'}fontSize='3xl'href={`/pages/repos/${itr.id}`}>
                 {itr.name}
-                  <Badge ml='5' colorScheme='blue'>
+                  <Badge ml='5' colorScheme='blue.500'>
                    Default
                  </Badge>
             </Link>

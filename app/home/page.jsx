@@ -7,12 +7,12 @@ import LoginButton from "../../components/LoginButton";
 import {  useSession } from "next-auth/react";
 import UserProfile from "../../components/UserProfile";
 import AllRepo from "../../components/AllRepo";
-import {  Grid, GridItem, LightMode, Spinner } from '@chakra-ui/react'
+import {  LightMode, Spinner } from '@chakra-ui/react'
 
 
 import getRepos from '@/utils/getData';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+
 import { sendEmailToDb } from '@/utils/sendEmailToDb';
 import styles from './home.module.css'
 

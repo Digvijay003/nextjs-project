@@ -1,4 +1,4 @@
-import { Image,Heading, Text, Button, HStack, Circle, Avatar, Input, useDisclosure, FormControl, FormLabel, useColorMode } from '@chakra-ui/react'
+import { Image,Heading, Text, Button, HStack, Circle, Avatar, Input, useDisclosure,  useColorMode } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 
 import { AtSignIcon, EmailIcon } from '@chakra-ui/icons'
@@ -8,7 +8,7 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
+ 
   ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react'
@@ -65,7 +65,7 @@ export default function UserProfile({name}) {
   alt='User Iamge'
   
 />
-<Avatar name='Dan Abrahmov' src={(session.user.image)?(session.user.image):'https://images.pexels.com/photos/4905078/pexels-photo-4905078.jpeg'} size='xs'className='user_avatar'/>
+<Avatar name='Dan Abrahmov' src={(session?.user?.image)?(session?.user?.image):'https://images.pexels.com/photos/4905078/pexels-photo-4905078.jpeg'} size='xs'className='user_avatar'/>
 </div>
 <div className='extra_user_info'>
 

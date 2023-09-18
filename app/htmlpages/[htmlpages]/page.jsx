@@ -1,14 +1,14 @@
 "use client"
 import getHTMLPages from '@/utils/getHTMLpages'
 import { Heading, useColorMode } from '@chakra-ui/react'
-import { useParams, useSearchParams } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import {  useSearchParams } from 'next/navigation'
+import React, { useEffect } from 'react'
 import styles from './htmlpages.module.css'
 
 
 export default function HTMLPage() {
   
-  const {colorMode}=useColorMode
+  
   const searchParams=useSearchParams()
  let decodeHtmlData=''
  let HtmlFormatData=''

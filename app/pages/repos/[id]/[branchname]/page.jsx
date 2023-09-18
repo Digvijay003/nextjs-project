@@ -17,13 +17,11 @@ export default function BranchPage() {
 
    
     const showAllCommits= (url)=>{
-        console.log("hahahahahahahah")
+       
         setMyUrl(url)
 
     }
-    useEffect(()=>{
-        console.log(myUrl,'myurl k939857987348')
-    },[myUrl])
+  
     const params=useParams()
  
    
@@ -45,7 +43,7 @@ export default function BranchPage() {
    useEffect(()=>{
    
      setCommitFilesdata(commitQuery?.data)
-     console.log(commitQuery?.data,'commit files data')
+   
 
    },[commitQuery,myUrl])
 

@@ -12,8 +12,8 @@ export default function Errors() {
     }
    
   return (
-    <div>
-        <h1>Error Page with status code {params.codeoferror}</h1>
+    <div className='error-NewRepo'>
+        <h1>Error Page with status code {params?.codeoferror}</h1>
     </div>
   )
 }

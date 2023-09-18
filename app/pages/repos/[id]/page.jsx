@@ -1,7 +1,7 @@
 "use client"
 
 
-import {  Box, Button, Card, CardBody, CardFooter, CardHeader, FormControl, FormLabel, Grid, GridItem, HStack, Heading, Input, SimpleGrid, Spacer, Spinner, StylesProvider, Text,Textarea, useColorMode } from '@chakra-ui/react'
+import {  Box, Button, Card, CardBody, CardFooter, CardHeader, FormControl, FormLabel, Grid, GridItem, HStack, Heading, Input,  Spinner,  Text,Textarea, useColorMode } from '@chakra-ui/react'
 import { redirect, useParams } from 'next/navigation'
 import {
   Accordion,
@@ -35,6 +35,7 @@ import { useSession } from 'next-auth/react'
 import { GITHUBTOKEN } from '@/utils/githubtoken'
 import styles from './pageRepos.module.css'
 import { useQuery } from '@tanstack/react-query'
+import convertDate from '@/utils/formatDate'
 
 
 export default function IssueDetails() {
@@ -66,29 +67,18 @@ useEffect(()=>{
   getReposDeatils?.data?.map((itr)=>{
     if(itr.id==params.id){
       setMydata(itr)
-      console.log(itr,'ye he data')
+     
     }
   })
 
 },[getReposDeatils?.data])
 
 
-  
-    
-  
- 
-
-
-useEffect(()=>{
-  console.log(mydata,'mydatalatestwala')
-
-},[mydata])
-
 
   const {isOpen,onClose,onOpen}=useDisclosure()
   const inputRef=useRef()
   const body=useRef()
-  let timeout
+  let timeout;
   if(status==='authenticated'){
   const handleSubmit=(e)=>{
     clearTimeout(timeout)
@@ -227,7 +217,7 @@ useEffect(()=>{
       <Text>{mydata?.description}</Text>
     </CardBody>
     <CardFooter>
-      <Text>Created At {mydata?.created_at}</Text>
+      <Text>Created At {convertDate(mydata?.created_at)}</Text>
       <Link className={styles.external_link}href={`/${mydata?.name}`} isExternal>See More About This Project<ExternalLinkIcon mx='5px' /></Link>
       
     </CardFooter>
@@ -243,7 +233,7 @@ useEffect(()=>{
           <ModalCloseButton />
           <ModalBody>
           <FormControl>
-  <FormLabel>title of issue</FormLabel>
+  <FormLabel>Title of issue</FormLabel>
   <Input ref={inputRef}/>
   
 </FormControl>
