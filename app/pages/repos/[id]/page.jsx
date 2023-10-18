@@ -44,7 +44,7 @@ const{data:session,status}=useSession({
   }
 })
 
-const githubtoken=GITHUBTOKEN
+const githubtoken=session?.accessToken
 
 const [mydata,setMydata]=useState()
 
