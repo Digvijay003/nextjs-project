@@ -90,7 +90,7 @@ export default function Page() {
     if(commitQuery.isLoading){
       return (<div>
          <Heading>
-        Wait a little bit data is loading regarding all commits
+        Wait a little bit data is loading regarding all commits....
       </Heading>
       <div className='spinner_style'>
           <Spinner
