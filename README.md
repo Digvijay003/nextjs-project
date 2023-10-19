@@ -10,7 +10,7 @@
   
 
 # SEE LIVE BELOW
-[CLICK HERE](https://github-clone-o-auth-uyv2-2mrrlgrpl-digvijay003.vercel.app/)
+[CLICK HERE](https://github-oauthapp.vercel.app/)
 
 
 
