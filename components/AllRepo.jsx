@@ -15,7 +15,7 @@ import axios from 'axios'
 
 import { redirect, useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
-import { GITHUBTOKEN } from '@/utils/githubtoken'
+
 
 
 
@@ -24,7 +24,7 @@ export default function AllRepo({repos}) {
   const {colorMode}=useColorMode()
   const{data:session}=useSession()
 
-  const githubtoken=GITHUBTOKEN
+  const githubtoken=session?.accessToken
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const inputRef=useRef()

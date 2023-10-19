@@ -32,7 +32,7 @@ import UserProfile from '@/components/UserProfile'
 import getRepos from '@/utils/getData'
 
 import { useSession } from 'next-auth/react'
-import { GITHUBTOKEN } from '@/utils/githubtoken'
+
 
 
 export default function IssueDetails() {
