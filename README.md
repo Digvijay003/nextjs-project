@@ -5,8 +5,8 @@
 + You need to **generate credentials** first in github developer settings under section named OAuth App
 + I also added authentication with email credentials using MongoDB and NextAuth.js although it is **commented** right now 
 + If you wish to create repository and issues of a particular reposiotry you need to create first **personal access token** by visiting github developer settings
-+ For styling purpose I used Chakra UI Library and also write some **custom css codes** by myself
-+ In this application you can check all details of your branches like commit history ,readme and other files and many more
++ For styling purpose I used Chakra UI Library and also write some **css codes** by myself
++ In this application you can check all details of your branches like commit history ,readme and other files and many more.
   
 
 # SEE LIVE BELOW
