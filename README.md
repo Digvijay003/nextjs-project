@@ -10,7 +10,7 @@
   
 
 # SEE LIVE BELOW
-[CLICK HERE](https://github-oauthapp.vercel.app/)
+[CLICK HERE TO CHECK APPLICATION LIVE](https://github-oauthapp.vercel.app/)
 
 
 
